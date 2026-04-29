@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--! This comment is a test for publishing the website in GitHub Pages. -->
+    <meta charset="UTF-8" />
+    <!-- java script for Dark mode -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (t !== "light" && t !== "dark") t = "dark";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabriel | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta
+      name="description"
+      content="Gabriel - Computer Science student portfolio: About, Education, Skills, and Contact."
+    />
+    <!-- icon from https://fonts.google.com/icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <!-- =========================================================
+         TOP / NAVIGATION
+         - Update the name/logo text in: .brand__text
+         - Update menu labels/section IDs in the <nav> links
+    ========================================================== -->
+    <header class="header" id="page-top">
+      <div class="container header__inner">
+        <a class="brand" href="#home" aria-label="Go to Home">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span class="brand__text">Gabriel</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+
+        <nav class="nav" id="site-nav" aria-label="Primary">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light mode">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12Zm0-16a1 1 0 0 1 1 1v1a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 18a1 1 0 0 1-1-1v-1a1 1 0 1 1 2 0v1a1 1 0 0 1-1 1ZM5.64 5.64a1 1 0 0 1 1.41 0l.71.71a1 1 0 0 1-1.41 1.41l-.71-.71a1 1 0 0 1 0-1.41Zm12.02 12.02a1 1 0 0 1-1.41 0l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41ZM2 13a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Zm18 0a1 1 0 0 1 1-1h1a1 1 0 1 1 0 2h-1a1 1 0 0 1-1-1ZM7.05 18.36a1 1 0 0 1 0-1.41l.71-.71a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1-1.41 0ZM16.24 7.17a1 1 0 0 1 0 1.41l-.71.71a1 1 0 0 1-1.41-1.41l.71-.71a1 1 0 0 1 1.41 0Z"
+              />
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M21 14.5A9.5 9.5 0 0 1 9.5 3a9.5 9.5 0 1 0 11.5 11.5Z"
+              />
+            </svg>
+          </button>
+          <a class="nav__link" href="#home">Home</a>
+          <a class="nav__link" href="#about">About</a>
+          <a class="nav__link" href="#education">Education</a>
+          <a class="nav__link" href="#skills">Skills</a>
+          <a class="nav__link" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- =========================================================
+           HOME / HERO
+           - Replace your photo: change src below (assets/...)
+           - Resume download: replace assets/Gabriel-Resume.pdf with your real PDF
+      ========================================================== -->
+      <section class="hero section" id="home">
+        <div class="container hero__grid">
+          <div class="hero__media">
+            <img
+              class="hero__img"
+              src="assets/itstanjiro.png"
+              alt="Gabriel photo"
+              width="480"
+              height="300"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+
+          <div class="hero__content">
+            <p class="kicker">Welcome</p>
+            <h1 class="hero__title">
+              Hi, I’m <span class="accent">Gabriel</span><br />
+              a <span class="accent">Computer Science</span> student.
+            </h1>
+            <p class="hero__subtitle">
+              I’m building clean, user-friendly projects and improving my skills in web development and
+              software development.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#contact">Contact me</a>
+              <!-- Put your resume PDF in /assets and keep the filename in sync -->
+              <a class="btn btn--ghost" href="assets/Resume.pdf" download>Download resume</a>
+            </div>
+
+            <div class="hero__meta" aria-label="Quick highlights">
+              <div class="pill">Minimal design</div>
+              <div class="pill">Responsive</div>
+              <div class="pill">HTML • CSS • JavaScript</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           ABOUT
+           - Update the paragraph text and the quick info boxes
+      ========================================================== -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">About me</h2>
+            <p class="section__desc">A quick introduction and what I’m focused on right now. (eme eme lang muna)</p>
+          </div>
+
+          <div class="card">
+            <p>
+              I’m Gabriel, a Computer Science student who enjoys building simple, polished interfaces and
+              learning how things work under the hood. I like turning ideas into small, practical projects,
+              and I’m currently exploring front-end fundamentals and software engineering best practices.
+              Outside of coding, I’m passionate about photography—I love capturing moments and experimenting
+              with composition, light, and color.
+            </p>
+            <div class="about__actions">
+              <!-- TODO: Replace with your real gallery website URL -->
+              <a
+                class="btn btn--ghost"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View my photo gallery
+              </a>
+            </div>
+            <div class="card__grid">
+              <div class="kv">
+                <div class="kv__k">Location</div>
+                <div class="kv__v">Your City, Country</div>
+              </div>
+              <div class="kv">
+                <div class="kv__k">Interests</div>
+                <div class="kv__v">Web Dev, UI, Problem Solving, Photography</div>
+              </div>
+              <div class="kv">
+                <div class="kv__k">Currently learning</div>
+                <div class="kv__v">JavaScript, CSS, Data Structures</div>
+              </div>
+              <div class="kv">
+                <div class="kv__k">Open to</div>
+                <div class="kv__v">Internships, collaboration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           EDUCATION
+           - Update school names, dates, and bullet points
+      ========================================================== -->
+      <section class="section" id="education">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Education</h2>
+            <p class="section__desc">Your academic background and relevant milestones. (Saka na din tinatamad pako)</p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline__item card">
+              <div class="timeline__top">
+                <h3 class="timeline__title">B.S. Computer Science</h3>
+                <p class="timeline__date">20XX — Present</p>
+              </div>
+              <p class="muted">
+                University / College Name — Add relevant coursework, achievements, or projects.
+              </p>
+              <ul class="list">
+                <li>Coursework: Data Structures, OOP, Databases</li>
+                <li>Projects: Portfolio website, small JavaScript apps</li>
+              </ul>
+            </article>
+
+            <article class="timeline__item card">
+              <div class="timeline__top">
+                <h3 class="timeline__title">Senior High School / SHS</h3>
+                <p class="timeline__date">20XX — 20XX</p>
+              </div>
+              <p class="muted">School Name — Add honors or clubs if you want.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SKILLS
+           - Add/remove <span class="tag">...</span> to match your stack
+      ========================================================== -->
+      <section class="section" id="skills">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Skills</h2>
+            <p class="section__desc">Tools and technologies I use (and want to get better at).</p>
+          </div>
+
+          <div class="skills">
+            <div class="card">
+              <h3 class="card__title">Front-end</h3>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Responsive Design</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Back-end</h3>
+              <div class="tags">
+                <span class="tag">PHP</span>
+                <span class="tag">Laravel</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Java</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Computer Science</h3>
+              <div class="tags">
+                <span class="tag">Problem Solving</span>
+                <span class="tag">Algorithms</span>
+                <span class="tag">Data Structures</span>
+                <span class="tag">OOP</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3 class="card__title">Tools</h3>
+              <div class="tags">
+                <span class="tag">Git</span>
+                <span class="tag">VS Code / Cursor</span>
+                <span class="tag">Claude</span>
+                <span class="tag">Figma (basic)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           CONTACT
+           - Update your email + social links below
+           - The form currently opens the visitor's email app (mailto)
+      ========================================================== -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title">Contact me</h2>
+            <p class="section__desc">Send a message. This uses a simple mailto flow for now.</p>
+          </div>
+
+          <div class="contact">
+            <div class="card contact__info">
+              <h3 class="card__title">Let’s connect</h3>
+              <p class="muted">
+                Saka ko na i update to Ble.
+              </p>
+
+              <div class="contact__rows">
+                <div class="kv">
+                  <div class="kv__k">Email</div>
+                  <div class="kv__v">
+                    <!-- Replace with your real email -->
+                    <a class="link" href="mailto:yourname@example.com">yourname@example.com</a>
+                  </div>
+                </div>
+                <div class="kv">
+                  <div class="kv__k">GitHub</div>
+                  <div class="kv__v">
+                    <!-- Replace href="#" with your GitHub profile URL -->
+                    <a class="link" href="#" target="_blank" rel="noreferrer">Add link</a>
+                  </div>
+                </div>
+                <div class="kv">
+                  <div class="kv__k">LinkedIn</div>
+                  <div class="kv__v">
+                    <!-- Replace href="#" with your LinkedIn profile URL -->
+                    <a class="link" href="#" target="_blank" rel="noreferrer">Add link</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form class="card form" id="contact-form" novalidate>
+              <h3 class="card__title">Message</h3>
+
+              <label class="field">
+                <span class="field__label">Name</span>
+                <input class="field__input" type="text" name="name" autocomplete="name" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Email</span>
+                <input class="field__input" type="email" name="email" autocomplete="email" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Message</span>
+                <textarea class="field__input field__input--area" name="message" rows="6" required></textarea>
+              </label>
+
+              <div class="form__actions">
+                <button class="btn btn--primary" type="submit">Send</button>
+                <button class="btn btn--ghost" type="reset">Reset</button>
+              </div>
+
+              <p class="form__note muted" id="form-note" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+         - Disclaimer text lives here
+    ========================================================== -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="muted">© <span id="year"></span> Gabriel</p>
+        <p class="muted footer__disclaimer">
+          Disclaimer: This website is a test and under development. (Gawa gamit Cursor) hehe
+        </p>
+        <a class="link footer__top" href="#page-top">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
